@@ -74,7 +74,6 @@
 /* Universal */
 
 html, body {
-	height: 100%;
 	padding: 0;
 	margin: 0;
 }
@@ -89,7 +88,6 @@ a {
 }
 
 .views { 
-	height: 100%;
 }
 
 .center-vertical {
@@ -135,7 +133,6 @@ a {
 /* Intro */
 .intro {
  	text-align: center;
-	height: 100%;
 }
 
 .intro .text {
@@ -152,6 +149,7 @@ a {
 	height: 120px;
 	font-size: 110px;
 	margin: auto;
+	margin-top:20px;
 }
 
 .intro .money-face img {
@@ -166,7 +164,6 @@ a {
 /* Game */
 
 .game {
-	height: 100%;
 }
 
 money {
@@ -204,6 +201,7 @@ money {
 	margin: auto;
 	vertical-align: top;
 	min-height: 410px;
+	margin-top:10px;
 }
 
 .game .big-button {
