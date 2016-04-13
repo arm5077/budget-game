@@ -1,0 +1,64 @@
+<div class="ending">
+
+	<div class="background">
+		<money ng-repeat="money in moneybags"></money>
+	</div>
+	
+	<div class="gameEnding">
+		<div trophy class="trophy"></div>
+		<div class="score">You got {{score}} / {{agencies.length}} points!</div>
+		
+		<div class="rankings">
+
+			<ul>
+				<li ng-class="{highlighted: score >= 20}">Senior VP of 1040 Form Enhancement <div>(20+ pts.)</div></li>
+				<li ng-class="{highlighted: score >= 15 && score <= 19}">Executive Tax Compliance Assassin <div>(15-19 pts.)</div></li>
+				<li ng-class="{highlighted: score >= 10 && score <= 14}">Assistant to the Asst. Undersecretary of Excel <div>(10-14 pts.)</div></li>
+				<li ng-class="{highlighted: score <= 9}">Intern, Remittance Perfection Division <div>(Below 10 pts.)</div></li>
+			</ul>
+		</div>
+		
+		<div class="buttons">
+			<div class="small-button" ng-show="showSocial != true" ng-click="showSocial=true">Share score</div>
+			<a class="small-button half" ng-show="showSocial == true"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a class="small-button half" ng-show="showSocial == true"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			<a href="#/game" class="small-button inverse">Play again</a>
+		</div>
+		
+	</div>
+	
+	<div class="infographic">
+				
+		<div class="headlineBox">
+			<div class="headline">
+				What the U.S. government costs, in actual money
+				<div class="social">
+					<a class="socialButton" id="facebook">
+						<i class="fa fa-facebook" aria-hidden="true"></i>
+					</a>
+					<a class="socialButton" id="twitter">
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+		
+			<div class="subhed"><p>Most humans have a tough time envisioning $4 trillion, the size of the U.S. budget.</p><p>So we've taken that figure and divvied it up among the 319 million U.S. residents, showing the size of the average American's share of the government and how it fits into their lives.</p></div>
+		</div>
+		<table>
+			<tbody>
+				<tr ng-repeat="agency in agencies" ng-init="agency.expanded = false" ng-click="agency.expanded = !agency.expanded">
+					<td class="emoji" emoji></td>
+					<td class="text">
+						<i class="fa fa-chevron-down" aria-hidden="true" ng-show="agency.expanded == false"></i>
+						<i class="fa fa-chevron-up" aria-hidden="true" ng-show="agency.expanded == true"></i>
+						<div class="agencyName">{{agency.agency}}</div>
+						<div class="comparison">${{numberWithCommas(agency.per_capita.toFixed(2))}} or {{agency.item}}</div>
+						<div class="description" ng-class="{expanded: agency.expanded}">{{ agency.description }}</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+	
+</div>

@@ -1,0 +1,39 @@
+<div class="game">
+	<div class="background">
+		<money ng-repeat="money in moneybags"></money>
+	</div>
+	
+	<div class="center-vertical">
+		<div class="buttons">
+			<div class="label">Which costs more?</div>
+
+			<div ng-repeat="choice in choices" class="choice">
+				<div class="big-button" ng-class="{correct: choice.correct == true, incorrect: choice.correct == false}" ng-click="makeGuess(choice)">
+					<div class="center-vertical">{{choice.agency}}</div>
+					<img class="answerImage center-vertical" src="assets/correct.png" ng-show="choice.correct == true" />
+					<img class="answerImage center-vertical" src="assets/wrong.png" ng-show="choice.correct == false" />
+				</div>
+			</div>
+		</div>
+		
+		<div class="iconContainer">
+			<div class="item timer">
+				<div clock class="clock"></div>
+				<div class="text">Time: <span class="number">{{timeLeft}}</span></div>
+			</div>
+		
+			<div class="item score">
+				<div trophy class="trophy"></div>
+				<div class="text">Score: <span class="number">{{score}}</span></div>
+				<div class="scoreWrapper">
+					<div class="scoreBar" style="width: {{score / agencies.length * 100}}%"></div>	
+				</div>
+				
+			</div>
+		</div>
+		<div style="clear:both"></div>
+	</div>
+	
+
+	
+</div>

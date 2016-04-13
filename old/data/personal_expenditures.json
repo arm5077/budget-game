@@ -1,0 +1,142 @@
+[
+  {
+    "timespan":"annual",
+    "item":"Health insurance",
+    "expenditure":2868
+  },
+  {
+    "timespan":"annual",
+    "item":"Vehicle insurance",
+    "expenditure":1112
+  },
+  {
+    "timespan":"monthly",
+    "item":"Cell phone",
+    "expenditure":80.25
+  },
+  {
+    "timespan":"single",
+    "item":"Postage stamp",
+    "expenditure":0.49
+  },
+  {
+    "timespan":"annual",
+    "item":"Health insurance",
+    "expenditure":2868
+  },
+  {
+    "timespan":"annual",
+    "item":"Amazon Prime",
+    "expenditure":99
+  },
+  {
+    "timespan":"monthly",
+    "item":"Netflix",
+    "expenditure":9.99
+  },
+  {
+    "timespan":"single",
+    "item":"Six-pack of beer",
+    "expenditure":7
+  },
+  {
+    "timespan":"annual",
+    "item":"Housing costs",
+    "expenditure":17798
+  },
+  {
+    "timespan":"annual",
+    "item":"Alcoholic beverages",
+    "expenditure":463
+  },
+  {
+    "timespan":"annual",
+    "item":"Electricity",
+    "expenditure":1484
+  },
+  {
+    "timespan":"annual",
+    "item":"Laundry and cleaning supplies",
+    "expenditure":148
+  },
+  {
+    "timespan":"annual",
+    "item":"Major appliances",
+    "expenditure":233
+  },
+  {
+    "timespan":"annual",
+    "item":"Car payment",
+    "expenditure":3301
+  },
+  {
+    "timespan":"annual",
+    "item":"Pets and pet supplies",
+    "expenditure":460
+  },
+  {
+    "timespan":"annual ",
+    "item":"Books and reading",
+    "expenditure":103
+  },
+  {
+    "timespan":"single",
+    "item":"Snickers bar",
+    "expenditure":0.88
+  },
+  {
+    "timespan":"single",
+    "item":"One pound of flour",
+    "expenditure":0.52
+  },
+  {
+    "timespan":"single",
+    "item":"One pound spaghetti",
+    "expenditure":1.31
+  },
+  {
+    "timespan":"single",
+    "item":"A loaf of white bread",
+    "expenditure":1.41
+  },
+  {
+    "timespan":"single",
+    "item":"A pound of chocolate chip cookies",
+    "expenditure":3.29
+  },
+  {
+    "timespan":"single",
+    "item":"A dozen large eggs",
+    "expenditure":2.27
+  },
+  {
+    "timespan":"single",
+    "item":"A gallon of whole milk",
+    "expenditure":3.23
+  },
+  {
+    "timespan":"single",
+    "item":"One pound of American cheese",
+    "expenditure":4.44
+  },
+  {
+    "timespan":"single",
+    "item":"One pound of Red Delicious apples",
+    "expenditure":1.44
+  },
+  {
+    "timespan":"single",
+    "item":"One pound of bananas",
+    "expenditure":0.57
+  },
+  {
+    "timespan":"single",
+    "item":"One pound of potatoes",
+    "expenditure":0.66
+  },
+  {
+    "timespan":"monthly",
+    "item":"Spotify subscription",
+    "expenditure":9.99
+  }
+]

@@ -1,0 +1,97 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Angular.js -->
+	<script src="bower_components/angular/angular.min.js"></script>
+
+	<!-- Angular-animate.js -->
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+
+	<script src="//twemoji.maxcdn.com/2/twemoji.min.js"></script>
+
+	<link href="styles.css" rel="stylesheet" />
+	
+</head>
+<body ng-controller="controller">
+
+	<div class="background">
+		<money ng-repeat="money in moneybags"></money>
+	</div>
+
+	<div class="intro" center-absolute ng-hide="started">
+		<h1> Guess Your Share <div class="smaller">of the</div> Federal Budget</h1>
+		<p>We're going to give you two items: a <span class="label government"><strong>federal program</strong></span> and a <span class="label personal"><strong>common household expense</strong></span>. Click the one you think is more expensive on a per-capita basis.
+		<div class="start" ng-click="startGame()">Start</div>
+	</div>
+		
+	<div class = "game" ng-show="started" ng-class="{ slideUp: ended }">
+		<div class="timer">Time remaining: <strong>{{timeLeft}}</strong></div>	
+		
+		<div class="prompt">Which is more?</div>
+
+		<ul class="choices" ng-show="started">
+			<li ng-repeat="choice in choices" ng-click="makeGuess(choice)" ng-class="{correct: choice.correct, incorrect: choice.correct == false }">
+				<div class="header" ng-if="choice.timespan">
+					<div class="label personal">Household</div>
+				</div>
+				<div class="header" ng-if="!choice.timespan">
+					<div class="label government">Government</div>
+				</div>
+				<div center-y class="title" ng-bind="makeChoiceTitle(choice)"></div>
+			</li>
+		</ul>
+		
+		<div class="prices">
+			<ul>
+				<li ng-repeat="choice in choices" ng-class="{correct: choice.correct, incorrect: choice.correct == false }">
+					${{choice.expenditure}}
+				</li>
+			</ul>
+			<div class="answer" ng-repeat="thisAnswer in answer" ng-class="{correct: thisAnswer=='Right!', incorrect: thisAnswer=='Wrong!' }">
+				{{thisAnswer}}
+			</div>
+			
+		</div>
+		
+		
+	</div>
+	
+	<div class="conclusion" ng-class="{ expanded: ended }">
+		You got <strong>{{Math.round( score / guesses.length * 1000) / 10}}%</strong> correct!
+	</div>
+	
+	
+	<div class="answerTitle" ng-show="guesses.length > 0">Your answers</div>
+	<ul class="guesses" ng-show="started" ng-class="{ expanded: ended }">
+		<li ng-repeat="guessPair in guesses" class="guessPairs">
+			<ul>
+				<li ng-repeat="guess in guessPair" class="guess" ng-class="{correct: guess.correct, incorrect: guess.correct == false}">
+					<div class="name">
+						{{guess.item}} <span ng-if="guess.timespan">({{guess.timespan}})</span>
+					</div>
+
+					<div class="price">
+						${{guess.expenditure}}
+					</div>
+				</li>
+			</ul>
+			
+			
+			
+			
+			
+			
+		</li>
+	</ul>
+
+
+
+</body>
+
+<!-- My scripts -->
+<script src="app.js"></script>
+
+</html>

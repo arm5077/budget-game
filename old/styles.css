@@ -1,0 +1,341 @@
+@import url(http://cdn.theatlantic.com/assets/static/common/fonts/proxima-nova.css);
+@import url(http://cdn.theatlantic.com/assets/static/common/fonts/lyon.css);
+@import url(http://cdn.theatlantic.com/assets/static/common/fonts/rajdhani.css);
+
+.government {
+	background-color: #EC008C;
+}
+
+.personal {
+	background-color: #5C2946;
+}
+
+body {
+	font-family: Proxima Nova, sans-serif;
+	min-height: 100%;
+	//background-image: url("https://media.giphy.com/media/ADgfsbHcS62Jy/giphy.gif");
+	background-size: cover;
+}
+
+.intro {
+	max-width: 600px;
+	text-align: center;
+	margin: auto;
+}
+
+.intro h1 {
+	font-family: Lyon Display, serif;
+	font-size: 50pt;
+	margin: 0;
+	padding: 0;
+}
+
+	.intro h1 .smaller {
+		font-size: 20pt;
+		margin: 10px 0px 20px;
+		font-family: Lyon Text, serif;
+		font-weight: normal;
+		font-style: italic
+	}
+
+
+.intro p {
+	font-size: 16pt;
+	line-height: 1.3em;
+}
+
+.intro p .label {
+	color: white;
+	font-size: 14pt;
+	padding: 3px 8px;
+}
+
+.intro .start {
+	font-family: Rajdhani, sans-serif;
+	padding: 20px 30px;
+	background-color: #333;
+	color: white;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 13pt;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+
+.game {
+	width: 800px;
+	margin: auto;
+	height: 400px;
+	transition: .5s all;
+	position: relative;
+	opacity: 1;
+	top: 0px;
+}
+
+	.game.slideUp {
+		height: 0;
+		top: -1000px;
+		opacity: 0;
+	}
+
+.prompt {
+	font-weight: 600;
+	font-size: 20pt;
+	text-align: center;
+	margin: 15px;
+}
+
+.timer {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+.choices, .prices ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.choices {
+	min-height:400px;
+}
+
+.choices li, .prices li {
+	margin: 0;
+	padding: 0;
+	height: 300px;
+	border: 1px solid #ccc;
+	padding: 0px 20px;
+	width: 300px;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	transition: .25s all;
+	text-align: center;
+	background-color: rgba(255,255,255,.75);
+	border-radius: 5px;
+}
+
+	.choices li:first-child, .prices li:first-child {
+		margin-right: 40px;
+	}
+
+	.choices li:hover {
+		cursor: pointer;
+	}
+
+		.choices li.ng-enter:first-child {
+			left: -100%;
+		}
+		
+		.choices li.ng-enter.ng-enter-active:first-child {
+			left: 0%;
+		}
+		
+		.choices li.ng-enter:nth-child(2n) {
+			right: -100%;
+		}
+		
+		.choices li.ng-enter.ng-enter-active:nth-child(2n) {
+			right: 0%;
+		}
+		
+		.choices li.ng-leave:nth-child(2n + 1) {
+			left: 0%;
+		}
+		
+		.choices li.ng-leave.ng-leave-active:nth-child(2n + 1) {
+			left: -100%;
+		}
+
+		.choices li.ng-leave:nth-child(2n) {
+			right: 0%;
+		}
+		
+		.choices li.ng-leave.ng-leave-active:nth-child(2n) {
+			right: -100%;
+		}
+
+.choices li .header {
+	font-family: Rajdhani, serif;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 18px;
+	position: absolute;
+	top: 20px;
+	left: 0;
+	color: white;
+	text-align: center;
+	width: 100%;
+}
+
+.choices li .header .label {
+	display: inline-block;
+	padding: 3px 8px;
+}
+
+.choices li .title {
+	font-size: 20pt;
+}
+
+	.choices li:hover .title {
+		text-decoration: underline;
+	} 
+
+.prices {
+	position: relative;
+}
+
+.prices ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.prices li, .answer {
+	height: 0;
+	border: 0;
+	opacity: 0;
+	display: none;
+	transition: 1.5s all;
+	font-family: Rajdhani, sans-serif;
+	font-size: 20pt;
+}
+
+	.prices li.ng-leave, .answer.ng-leave {
+		opacity: 1;
+		top: -100px;
+		height: auto;
+		display: inline-block;
+	}
+
+	.prices li.ng-leave.ng-leave-active, .answer.ng-leave.ng-leave-active {
+		opacity: 0;
+		top: -300px;
+		height: auto;
+	}
+
+.answer {
+	width: 100%;
+	position: relative;
+	transition: 1.5s all;
+	text-align: center;
+	font-family: Rajdhani, sans-serif;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+.correct {
+	color: seagreen;
+	border-color: seagreen;
+}
+
+.incorrect {
+	color: red;
+	border-color: red;
+}
+
+.answerTitle {
+	text-align: center;
+	margin: 20px 0px 10px;
+	font-weight: bold;
+}
+
+ul.guesses {
+	width: 700px;
+	padding: 0px;
+	margin: 0px;
+	margin: auto;
+	list-style: none;
+
+}
+
+ul.guesses, ul.guesses > * {
+	transition: .5s all;
+	list-style: none;
+}
+
+ul.guesses ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul.guesses li.guessPairs {
+	padding: 0;
+	margin: 0;
+}
+
+
+ul.guesses li.guess {
+	text-align: center;
+	padding: 10px 2%;
+	border: 1px solid;
+	display: inline-block;
+	width: 44%;
+	margin-bottom: 10px;
+}
+
+ul.guesses li.guess:first-child {
+	margin-right: 2%;
+}
+
+ul.guesses li .name {
+	font-size: 12pt;
+}
+
+ul.guesses li .price {
+	max-height: 0px;
+	opacity: 0;
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+ul.guesses.expanded {
+	width: 600px;
+}
+
+ul.guesses.expanded .price {
+	max-height: 100px;
+	opacity: 1;
+}
+
+.conclusion {
+	max-height: 0px;
+	opacity: 0;
+	transition: .5s all;
+	text-align: center;
+	font-size: 30pt;
+	margin: 0px;
+}
+
+.conclusion.expanded {
+	max-height: 300px;
+	opacity: 1;
+	margin: 10px 0px 20px;
+}
+
+
+money {
+	display:inline-block;
+	height: 30px;
+	width: 30px;
+	position: fixed;
+}
+
+	money img {
+		width: 100%;
+	}
+	
+.background {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}

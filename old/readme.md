@@ -1,0 +1,2 @@
+Government expenditures from 2015 column of this CSV: https://github.com/WhiteHouse/budgetdata/blob/2017/data/outlays.csv
+Personal expenditures from 2014 column of this CSV: http://www.bls.gov/cex/2014/standard/multiyr.xlsx

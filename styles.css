@@ -1,0 +1,607 @@
+@import url(http://cdn.theatlantic.com/assets/static/common/fonts/proxima-nova.css);
+@import url(http://cdn.theatlantic.com/assets/static/common/fonts/lyon.css);
+@import url(http://cdn.theatlantic.com/assets/static/common/fonts/rajdhani.css);
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+  }
+  30% {
+    width: 120%;
+	height: 120%;
+	top: -10%;
+	left: -10%;
+  }
+  60% {
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	}
+  100% {
+    width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+  }
+}
+
+@keyframes jig {
+  0% {
+	top:0px;
+  }
+  30% {
+    top: -20px;
+	-ms-transform: rotate(0deg); /* IE 9 */
+	-webkit-transform: rotate(0deg); /* Safari */
+	transform: rotate(0deg);
+  }
+  40% {
+	-ms-transform: rotate(20deg); /* IE 9 */
+	-webkit-transform: rotate(20deg); /* Safari */
+	transform: rotate(20deg);
+  }
+  50% {
+	-ms-transform: rotate(-20deg); /* IE 9 */
+	-webkit-transform: rotate(-20deg); /* Safari */
+	transform: rotate(-20deg);
+  }
+  60% {
+	-ms-transform: rotate(20deg); /* IE 9 */
+	-webkit-transform: rotate(20deg); /* Safari */
+	transform: rotate(20deg);
+  }
+  70% {
+	-ms-transform: rotate(-20deg); /* IE 9 */
+	-webkit-transform: rotate(-20deg); /* Safari */
+	transform: rotate(-20deg);
+  }
+  80% {
+	-ms-transform: rotate(0deg); /* IE 9 */
+	-webkit-transform: rotate(0deg); /* Safari */
+	transform: rotate(0deg);
+	top: -20px;
+  }
+  100% {
+	top: 0px;
+  }	
+}
+
+/* Universal */
+
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: "Proxima Nova", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.views { 
+	height: 100%;
+}
+
+.center-vertical {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}	
+
+.small-button {
+	/* Rectangle 15 Copy 4: */
+	background: #EC1B23;
+	border: 2px solid #EC1B23;
+	border-radius: 2px;
+	/* START GAME: */
+	font-family: Rajdhani, sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+	letter-spacing: 0.69px;
+	display: inline-block;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+.small-button.inverse {
+	background: #FFFFFF;
+	border: 2px solid #EC1B23;
+	border-radius: 2px;
+	color: #EC1B23;
+	max-width: 300px;
+	margin: auto;
+}
+
+.small-button.half {
+	width: 25px;
+}
+
+.pulse img {
+	animation: pulse .5s infinite;
+}
+
+/* Intro */
+.intro {
+ 	text-align: center;
+	height: 100%;
+}
+
+.intro .text {
+	font-family: Proxima Nova, sans-serif;
+	font-size: 20px;
+	color: #000000;
+	line-height: 24px;
+	max-width: 252px;
+	margin: 30px auto;
+}
+
+.intro .money-face {
+	width: 120px;
+	height: 120px;
+	font-size: 110px;
+	margin: auto;
+}
+
+.intro .money-face img {
+	animation: pulse 1s infinite;
+	position: relative;
+}
+
+.intro .money-on-fire img {
+	width: 20px;
+}
+
+/* Game */
+
+.game {
+	height: 100%;
+}
+
+money {
+	display:inline-block;
+	height: 30px;
+	width: 30px;
+	position: fixed;
+	opacity: .75;
+}
+
+	money img {
+		width: 100%;
+	}
+	
+.background {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.game .label {
+	font-family: Proxima Nova, sans-serif;
+	font-size: 20px;
+	color: #000000;
+	font-weight: bold;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.game .buttons {
+	max-width: 250px;
+	margin: auto;
+	vertical-align: top;
+	min-height: 410px;
+}
+
+.game .big-button {
+	border-radius: 4px;
+	width: 150px;
+	text-align: center;
+	font-size: 20px;
+	cursor: pointer;
+	position: relative;
+	left: 0;
+	background: #55ACEE;
+	border-radius: 4px;
+	color: #FFFFFF;
+	margin-bottom: 15px;
+	height: 175px;
+	padding: 0px 50px;
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	user-select: none;
+}
+
+.game .big-button.correct {
+	background: #D5F2C4;
+	border-radius: 4px;
+	color: #50B813;
+}
+
+.game .big-button.incorrect {
+	background: #FEBBBD;
+	border-radius: 4px;
+	color: #DD2E44;
+}
+
+.game .answerImage {
+	opacity: .5;
+	position: absolute;
+	left: 75px;
+	width: 100px;
+}
+
+	.game .answerImage.show {
+		display: block;
+	}
+
+.game .or {
+	text-align: center;
+	margin: 20px auto;
+	font-size: 20px;
+	
+}
+
+.game .footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+}
+
+.game .iconContainer {
+	width: 350px;
+	margin: 100px auto 0px;
+}
+
+.game .text {
+	font-family: Rajdhani;
+	text-transform: uppercase;
+	font-size: 18px;
+	color: #000000;
+	letter-spacing: 1px;
+}
+
+.game .trophy, .game .clock {
+	width: 50px;
+	height: 50px;
+	position: relative;
+	margin: 0px auto 10px;
+}
+
+.game .trophy img, .game .clock img {
+	width: 100%;
+	margin: auto;
+	position: relative;
+}
+
+.game .trophy.jig img {
+	animation: jig .5s infinite;
+}
+
+.game .timer, .game .score {
+	width: 90px;
+	text-align: center;
+}
+
+.game .scoreWrapper {
+	position: relative;
+	height: 5px;
+	background-color: #ccc;
+}
+
+.game .scoreBar {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #EE2A24;
+
+}
+
+.game .timer {
+	float: left;
+	text-align: center;
+}
+
+.game .score {
+	float: right;
+	text-align: center;
+}
+
+.game .choice.ng-enter {
+	position: relative;
+	left:2000px;
+	transition: .25s left;
+}
+
+.game .choice.ng-enter.ng-enter-active {
+	left: 0px;
+}
+
+/* Ending */
+
+.ending {
+	position: relative;
+	text-align: center;
+}
+
+.ending.ng-enter {
+	transition: .5s all;
+	position: relative;
+	left: 100%;
+}
+
+.ending.ng-enter.ng-enter-active {
+	left: 0%;
+}
+
+.ending .gameEnding {
+	width: 300px;
+	margin: 20px auto 0px;
+}
+
+.ending .trophy img {
+	display: block;
+	margin: 10px auto;
+}
+
+.ending .score {
+	text-align: center;
+	font-size: 20px;
+	color: #000000;
+	margin: 10px 0px;
+}
+
+.ending .buttons {
+	text-align: center;
+}
+
+.ending ul {
+	list-style: none;
+	padding: 0;
+	margin: 5px 0px 10px;
+	font-size: 14px;
+	
+}
+
+.ending li {
+	margin: 5px 0px;
+	padding: 5px;
+	color: #ccc;
+	display: none;
+}
+
+	.ending li.highlighted {
+		color: #333;
+		font-weight: bold;
+		font-size: 30px;
+		display:block;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 20px;
+	}
+
+.ending li.highlighted div {
+	display: block;
+	font-size: 15px;
+	font-weight: normal;
+}
+
+
+.ending p {
+	margin: 0;
+}
+
+/* Ending and infographic */
+
+.infographic {
+	background: #FFFFFF;
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.21);
+	padding: 10px 0px 0px;
+	margin-top: 30px;
+	text-align: left;
+	position: relative;
+}
+
+.infographic .headlineBox {
+	max-width: 300px;
+	margin: 20px auto 10px;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 5px 10px;
+}
+
+.infographic .headline {
+	font-family: Proxima Nova, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	color: #000000;
+	margin-bottom: 5px;
+}
+
+.infographic .subhed {
+	font-family: Proxima Nova, sans-serif;
+	font-size: 14px;
+	color: #000000;
+}
+
+.infographic p {
+	margin: 0 0 5px 0;
+}
+
+.infographic .agencyName {
+	font-family: Rajdhani, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #000000;
+	letter-spacing: 0.9px;
+}
+
+.infographic table {
+	width: 300px;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+.infographic .comparison {
+	font-family: Proxima Nova, sans-serif;
+	font-size: 18px;
+	color: #000000;
+}
+
+.infographic td {
+	padding: 15px 0px;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+	
+}
+
+.infographic td.text {
+	padding-right: 20px;
+	position: relative;
+
+}
+
+	.infographic .description {
+
+	}
+	
+
+.infographic td.emoji {
+	vertical-align: top;
+	padding: 20px 15px 0px 0px;
+}
+
+.infographic td.emoji img {
+	width: 30px;
+}
+
+.infographic .fa-chevron-down, .infographic .fa-chevron-up {
+	color: #cccccc;
+	position: absolute;
+	top: 15px;
+	right: 5px;
+}
+
+.infographic .description {
+	font-family: Proxima Nova, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	line-height: 16px;
+	margin-top: 0px;
+	max-height: 0px;
+	transition: all .25s;
+	overflow: hidden;
+}
+
+	.infographic .description.expanded {
+		max-height: 500px;
+		margin-top: 10px;
+	}
+
+.infographic .social {
+	display: inline-block;
+	text-align: left;
+	margin-bottom: 10px;
+	font-size: 11px;
+
+}
+
+.infographic .socialButton {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	position: relative;
+	top: -3px;
+}
+
+	.socialButton#twitter {
+		background-color: #55acee;
+	}
+	
+	.socialButton#facebook {
+		background-color: #3b5998;
+	}
+	
+	
+
+@media screen and (min-width: 900px) {
+
+	.intro .text { min-width: 400px; margin-bottom: 20px }
+	
+	.game .buttons {
+		max-width: none;
+		text-align: center;
+		max-height: none;
+		min-height: 230px;
+	}
+
+	.game .choice {
+		display: inline-block;
+		margin-right: 20px;
+		vertical-align: top;
+		position: relative;
+	}
+	
+	.game .choice:last-child {
+		margin-right: 0px;
+	}
+
+
+
+	.infographic {
+		width: 50%;
+		min-width: 600px;
+		margin: 30px auto;
+		padding-bottom: 30px;
+	}
+
+	.infographic .headlineBox {
+		max-width: 90%;
+	}
+	
+	.infographic table {
+		width: 90%;
+	}
+
+	.game .iconContainer {
+		margin-top: 50px;
+	}
+	
+	.infographic .social {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		display: block;
+	}
+	
+	.infographic .socialButton {
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		font-size: 14px;
+		top: 0px;
+
+	}
+	
+}
