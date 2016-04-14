@@ -6,6 +6,28 @@ angular.module("app", ['ngRoute', 'ngAnimate'])
 	$scope.timeLimit = 30;
 	$scope.timeLeft = $scope.timeLimit;
 	$scope.Math = Math;
+	$scope.speeds = [
+		{
+			speed: "fast",
+			time: 3000,
+			size: 75
+		},
+		{
+			speed: "medium",
+			time: 5000,
+			size: 40
+		},
+		{
+			speed: "slow",
+			time: 7000,
+			size: 15
+		}
+	];
+
+	$window.addEventListener("message", function(event){
+		if( event.data == "infographic")
+			window.location.hash="#/infographic";
+	}, false);
 	
 	$scope.options = [];
 	Papa.parse("data/agencies.csv", {
@@ -13,7 +35,6 @@ angular.module("app", ['ngRoute', 'ngAnimate'])
 		header: true,
 		dynamicTyping: true,
 		complete: function(results) {
-			console.log(results);
 			$scope.agencies = results.data;
 			$scope.agencies.sort(function(a,b){
 				return b.budget - a.budget;
@@ -34,23 +55,24 @@ angular.module("app", ['ngRoute', 'ngAnimate'])
 		link: function(scope, element, attr){
 			
 			var size = Math.ceil(Math.random() * 75);
+			var speed = scope.speeds[Math.round(Math.random() * 2)];
 			
-			element[0].style.left = "-50px";
+			console.log(speed);
+			
+			//element[0].style.left = "-50px";
 			element[0].style.top = Math.random() * window.innerHeight + "px";
-			element[0].style.width = size + "px";
-			element[0].style.zIndex = size;
-
+			element[0].style.width = speed.size + "px";
+			element[0].style.zIndex = speed.speed;
+			element.addClass(speed.speed);
 			
-			var speed = Math.random() * 5;
 			
-			var movement = setInterval(function(){
-				element[0].style.left = parseInt(element[0].style.left) + (speed + 1) + "px";
-				if( parseInt(element[0].style.left) > window.innerWidth ){
+			
+			
+			setTimeout(function(){
+				scope.$apply(function(){
 					scope.moneybags.splice(scope.moneybags.indexOf(scope.money), 1);
-					clearInterval(movement);
-				}
-			}, 10);
-			
+				});
+			}, speed.time);
 		}
 	}
 })

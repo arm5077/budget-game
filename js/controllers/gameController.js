@@ -21,8 +21,7 @@ angular.module("app")
 	
 	var timer = setInterval(function(){ 
 		$scope.$apply(function(){
-			$scope.timeLeft -= 1;
-			$scope.timeLeft = Math.max(0,Math.round($scope.timeLeft * 100) / 100);
+			$scope.timeLeft = Math.max(0,$scope.timeLeft - 1);
 			if( $scope.timeLeft <= 0 ){
 				$scope.ended = true;
 				window.location.hash="#/ending";
@@ -73,7 +72,7 @@ angular.module("app")
 			}
 			else {
 				// Subtract time from clock
-				$scope.timeLeft -= 3
+				$scope.timeLeft = Math.max(0, $scope.timeLeft - 3)
 				guess.correct = false
 			}
 

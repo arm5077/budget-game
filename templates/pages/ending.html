@@ -20,8 +20,8 @@
 		
 		<div class="buttons">
 			<div class="small-button" ng-show="showSocial != true" ng-click="showSocial=true">Share score</div>
-			<a class="small-button half" ng-show="showSocial == true"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a class="small-button half" ng-show="showSocial == true"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			<a class="small-button half" ng-show="showSocial == true" ng-href="{{makeFacebookLink()}}" target="blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a class="small-button half" ng-show="showSocial == true" ng-href="{{makeTwitterLink()}}" target="blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 			<a href="#/game" class="small-button inverse">Play again</a>
 		</div>
 		
@@ -33,10 +33,10 @@
 			<div class="headline">
 				What the U.S. government costs, in actual money
 				<div class="social">
-					<a class="socialButton" id="facebook">
+					<a class="socialButton" id="facebook" target="blank" href="https://www.facebook.com/dialog/feed?caption=+&app_id=100770816677686&link=http://www.theatlantic.com/politics/archive/2016/04/could-you-balance-the-federal-budget/477867/%23infographic&name=How the federal government fits into the average American's budget&description=The Atlantic breaks down how much a U.S. resident pays for government services and how it compares with the rest of a household budget.&redirect_uri=http://www.theatlantic.com/politics/archive/2016/04/could-you-balance-the-federal-budget/477867/%23infographic&picture=https://s3.amazonaws.com/the-atlantic/budget-quiz/assets/level1.jpg">
 						<i class="fa fa-facebook" aria-hidden="true"></i>
 					</a>
-					<a class="socialButton" id="twitter">
+					<a class="socialButton" id="twitter" target="blank" href="http://twitter.com/intent/tweet?text=.@TheAtlantic breaks down how much the average American pays for government services:&url=http://www.theatlantic.com/politics/archive/2016/04/could-you-balance-the-federal-budget/477867/%23infographic">
 						<i class="fa fa-twitter" aria-hidden="true"></i>
 					</a>
 				</div>

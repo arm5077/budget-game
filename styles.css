@@ -72,7 +72,7 @@
 }
 
 @keyframes fly {
-	0%: {
+	0% {
 		left: -10%
 	}
 	100% {
@@ -187,7 +187,20 @@ money {
 	width: 30px;
 	position: fixed;
 	opacity: .75;
+	left: 100%;
 }
+
+	money.fast {
+		animation: fly linear 3s;
+	}
+
+	money.medium {
+		animation: fly linear 5s;
+	}
+
+	money.slow {
+		animation: fly linear 7s;
+	}
 
 	money img {
 		width: 100%;
